@@ -3,14 +3,16 @@ import java.util.Scanner;
 
 class import_csv{
     private String path;
+    private int nrow;
 
-    public import_csv(String path){
+    public import_csv(String path, int nrow){
         this.path = path;
+        this.nrow = nrow;
     }
 
     public double[] read_csv(){
         File file = new File(path);
-        double[] rate = new double[255];
+        double[] rate = new double[nrow];
         int i = 0;
         try{
             Scanner inputStream = new Scanner(file);
