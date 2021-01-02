@@ -3,6 +3,8 @@ public class Monte_Carlo_Simulation {
     String path = "C:\\Users\\Gurgen\\Desktop\\Master Degree\\1 course\\1 half\\Computer Science and programming in data science (Java)\\Monte_Carlo_Simulation\\USD3MTD156N.csv";
     double[] data = new import_csv(path, 255).read_csv();
     double[] difference = new log_diff(data).calc_diff();
+    double JB_value = new Jarque_Bera(difference,difference.length).get_JB_value();
+    System.out.println(JB_value);
     }
 
 }
