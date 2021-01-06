@@ -11,12 +11,12 @@ public class Monte_Carlo_Simulation<i> extends PApplet {
         size(1080, 720);
     }
 
-    String path = "C:\\Users\\Minasyan\\Desktop\\java_project\\GOLDAMGBD228NLBM.csv";
+    String path = "C:\\Users\\Gurgen\\Desktop\\Master Degree\\1 course\\1 half\\Computer Science and programming in data science (Java)\\Monte_Carlo_Simulation_Github\\java_project\\java_project\\GOLDAMGBD228NLBM.csv";
     double[] data = new import_csv(path, 254).read_csv();
     double[] difference = new log_diff(data).calc_diff();
     double mean = new mean(difference, difference.length).get_mean();
     double std = new std(difference, difference.length).get_std();
-    double[][] prediction= new Monte_Carlo(data[data.length-1],mean, std, 746, 10).create_simulation();
+    double[][] prediction= new Monte_Carlo(data[data.length-1],mean, std, 354, 10).create_simulation();
     // Creating random colors list for predictions.
     int[] colors = random_colors(prediction[0].length);
 
@@ -163,14 +163,6 @@ public class Monte_Carlo_Simulation<i> extends PApplet {
             line(i,(int) scaling_arr(data, prediction, 620)[data.length - 1] + 50, i + 5, (int) scaling_arr(data, prediction, 620)[data.length - 1] + 50);
         }
         ellipse(50, (int) scaling_arr(data, prediction, 620)[data.length - 1] + 50, 4, 4);
-
-        text((int) (max_all(data, prediction) - min_all(data, prediction))/2, 35, 360);
-        ellipse(50, 360, 4, 4);
-        text((int) (max_all(data, prediction) - min_all(data, prediction))/4, 35, 515);
-        ellipse(50, 515, 4, 4);
-        text((int) (max_all(data, prediction) - min_all(data, prediction))*3/4, 35, 205);
-        ellipse(50, 205, 4, 4);
-
 
         // Prediction.
         for(int j = 0; j < prediction[0].length; j++) {
