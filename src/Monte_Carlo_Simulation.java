@@ -17,8 +17,6 @@ public class Monte_Carlo_Simulation<i> extends PApplet {
     double mean = new mean(difference, difference.length).get_mean();
     double std = new std(difference, difference.length).get_std();
     double[][] prediction= new Monte_Carlo(data[data.length-1],mean, std, 746, 10).create_simulation();
-    double[] test = new double[1000];
-    double test_mean = new mean(test, test.length).get_mean();
     // Creating random colors list for predictions.
     int[] colors = random_colors(prediction[0].length);
 
@@ -182,13 +180,5 @@ public class Monte_Carlo_Simulation<i> extends PApplet {
          }
         }
         stroke(0);
-
-//        println("min_all is " + min_all(data, prediction));
-//        println("min of data is " + getMin(data));
-//        for(int i = 0; i < prediction.length; i++){
-//            println("min of prediction[" + i + "] is " + getMin(prediction[i]));
-//        }
-
-
     }
 }
