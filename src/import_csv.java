@@ -17,16 +17,11 @@ class import_csv{
         try{
             Scanner inputStream = new Scanner(file);
             inputStream.next();
-            double sum = 0;
-            double n = 0;
 
             while (inputStream.hasNext()){
                 String data = inputStream.next();
                 String[] values = data.split(",");
-
                 double rates = Double.parseDouble(values[1]);
-                sum += rates;
-                n += 1;
                 rate[i] = rates;
                 i+= 1;
             }
