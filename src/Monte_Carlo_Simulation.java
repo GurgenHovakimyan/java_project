@@ -16,7 +16,7 @@ public class Monte_Carlo_Simulation<i> extends PApplet {
     double[] difference = new log_diff(data).calc_diff();
     double mean = new mean(difference, difference.length).get_mean();
     double std = new std(difference, difference.length).get_std();
-    double[][] prediction= new Monte_Carlo(data[data.length-1],mean, std, 354, 10).create_simulation();
+    double[][] prediction= new Monte_Carlo(data[data.length-1],mean, std, 744, 10).create_simulation();
     // Creating random colors list for predictions.
     int[] colors = random_colors(prediction[0].length);
 
